@@ -1,220 +1,200 @@
 import React from "react";
 import type { Metadata } from "next";
 import {
-  Croissant,
-  Cake,
-  IceCreamCone,
-  Thermometer,
-  MapPin,
   Clock,
   ShieldCheck,
-  Wifi,
+  CheckCircle2,
+  Thermometer,
+  Compass,
   ArrowRight,
+  Sparkles,
+  Award,
 } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services | Ali Logistics",
   description:
-    "Explore Ali Logistics transport services — from daily bread routes to temperature-controlled pastry delivery and specialty cake transport.",
+    "Explore our specialized bakery transport classes — daily pre-dawn scheduled route runs, anti-vibration tiered cake delivery, cold chain lockers, and last-mile commissary staging.",
 };
 
-const services = [
+const serviceDetails = [
   {
-    id: "breads",
-    icon: Croissant,
-    title: "Croissants & Artisan Breads",
-    subtitle: "Daily Scheduled Routes",
-    description:
-      "Our most popular service. We handle the daily rhythm of bakery logistics — picking up fresh-baked breads, croissants, bagels, and morning pastries from your ovens and delivering them to cafés, grocery partners, and direct customers before the morning rush.",
-    image:
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop",
-    features: [
-      {
-        icon: Clock,
-        label: "Pre-dawn pickups starting at 3 AM",
-      },
-      {
-        icon: MapPin,
-        label: "Multi-stop optimized route planning",
-      },
-      {
-        icon: ShieldCheck,
-        label: "Ventilated trays prevent condensation",
-      },
-      {
-        icon: Wifi,
-        label: "Real-time GPS tracking for every delivery",
-      },
+    id: "scheduled",
+    badge: "Primary Routes",
+    title: "Daily Scheduled Route Logistics",
+    desc: "We operate the daily rhythm of bakery logistics — picking up fresh-baked breads, croissants, and morning inventory directly from hot ovens at 3:00 AM and delivering them before cafe doors open.",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop",
+    capabilities: [
+      { icon: Clock, label: "Pre-dawn route coordination starting at 3:00 AM" },
+      { icon: Compass, label: "Multi-stop pre-scheduled route optimization" },
+      { icon: ShieldCheck, label: "Sanitised, ventilated rack bins to prevent condensation" },
+      { icon: CheckCircle2, label: "Live coordinate dispatch notifications for cafe managers" },
     ],
-    accent: "bg-gold-light",
-    accentDark: "text-gold-dark",
   },
   {
-    id: "cakes",
-    icon: Cake,
-    title: "Large Tiered & Wedding Cakes",
-    subtitle: "Special Event Transport",
-    description:
-      "Our specialty. Transporting multi-tier cakes requires precision engineering — custom suspension systems, anti-vibration platforms, adjustable rack spacing, and climate control. We've delivered thousands of wedding and event cakes without a single topple.",
-    image:
-      "https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=1200&auto=format&fit=crop",
-    features: [
-      {
-        icon: ShieldCheck,
-        label: "Custom anti-vibration platforms",
-      },
-      {
-        icon: Thermometer,
-        label: "Climate-controlled at 18°C–22°C",
-      },
-      {
-        icon: Clock,
-        label: "White-glove setup at venue",
-      },
-      {
-        icon: MapPin,
-        label: "Dedicated driver — no multi-stops",
-      },
+    id: "event",
+    badge: "Anti-Vibration & High-Value",
+    title: "Specialized Event Transport",
+    desc: "Delivering fragile tiered wedding cakes and patisserie masterpieces. We equip our vans with custom-dampening shock systems and level-adjustable cabinets to navigate any terrain safely.",
+    image: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=1200&auto=format&fit=crop",
+    capabilities: [
+      { icon: Award, label: "Calibrated low-frequency pneumatic airbag suspensions" },
+      { icon: Thermometer, label: "Stable humidity and climate lock at 18°C–22°C" },
+      { icon: Sparkles, label: "Dedicated express driver routes with zero multi-stops" },
+      { icon: CheckCircle2, label: "White-glove coordination and setup at venue tables" },
     ],
-    accent: "bg-sage-light",
-    accentDark: "text-sage-dark",
   },
   {
-    id: "pastries",
-    icon: IceCreamCone,
-    title: "Cooled Pastries & Desserts",
-    subtitle: "Temperature Controlled Delivery",
-    description:
-      "Chocolate ganache, crème brûlée, mousse cakes, and fresh fruit tarts — products that demand unwavering temperature precision. Our IoT-enabled refrigeration units maintain your exact specifications from pickup to delivery, with real-time monitoring you can track from your phone.",
-    image:
-      "https://images.unsplash.com/photo-1587668178277-295251f900ce?q=80&w=1200&auto=format&fit=crop",
-    features: [
-      {
-        icon: Thermometer,
-        label: "Precision range: 2°C – 8°C",
-      },
-      {
-        icon: Wifi,
-        label: "Live IoT temperature dashboard",
-      },
-      {
-        icon: ShieldCheck,
-        label: "Automatic alerts if temp deviates",
-      },
-      {
-        icon: Clock,
-        label: "Full chain-of-custody temperature logs",
-      },
+    id: "cold-chain",
+    badge: "IoT Thermostatic Control",
+    title: "Cold Chain & Chilled Lockers",
+    desc: "Unwavering temperature control for mousse cakes, custard tarts, and laminated raw doughs. Dual chambers stay locked at a constant 4.2°C to prevent premature proofing or glaze melting.",
+    image: "https://images.unsplash.com/photo-1587668178277-295251f900ce?q=80&w=1200&auto=format&fit=crop",
+    capabilities: [
+      { icon: Thermometer, label: "Dual-compressor locker chambers keeping strict 2°C–8°C ranges" },
+      { icon: Clock, label: "Continuous automated IoT telemetry logs sent to phone dashboards" },
+      { icon: ShieldCheck, label: "Automatic backup refrigeration and threshold overrides" },
+      { icon: CheckCircle2, label: "Full FDA food-transportation logging sheets for auditors" },
     ],
-    accent: "bg-gold-light",
-    accentDark: "text-gold-dark",
+  },
+  {
+    id: "last-mile",
+    badge: "3PL Warehouse Staging",
+    title: "Last-Mile & Commissary Logistics",
+    desc: "Bridging central production kitchens and retail outposts. We manage pre-sorting, cross-dock loading, and rapid staging lockers to minimize handling and maximize shelf-life freshness.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+    capabilities: [
+      { icon: Compass, label: "Central commissary pickup and sorting coordination" },
+      { icon: Clock, label: "Time-slotted staging runs matching retail peak schedules" },
+      { icon: ShieldCheck, label: "Sanitised cross-dock staging units at our regional hubs" },
+      { icon: CheckCircle2, label: "Express parcel lockers for small-batch patisserie dispatch" },
+    ],
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-espresso">
+    <div className="bg-[#FAF9F5] text-[#1C1716] font-sans">
+      
+      {/* 1. Hero Banner Section */}
+      <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden bg-[#1C1716] pt-16">
         <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-25"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2832&auto=format&fit=crop')",
-            }}
+          <img
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop"
+            alt="Bakery transport fleet"
+            className="w-full h-full object-cover opacity-25 transform scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-espresso/80 to-espresso" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-cream/80 text-sm font-semibold tracking-wide uppercase mb-6">
-            Our Services
-          </span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
-            Every Baked Good,
-            <br />
-            <span className="text-gradient-gold">Handled Perfectly</span>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#E5D3B3]">
+            Operational Classes
+          </p>
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#FAF9F5] tracking-wide">
+            Our Logistics Services
           </h1>
-          <p className="text-lg md:text-xl text-cream/70 max-w-2xl mx-auto">
-            Three specialized transport categories — each with tailored
-            vehicles, handling protocols, and monitoring technology.
+          <p className="text-sm text-[#FAF9F5]/70 max-w-2xl mx-auto font-light leading-relaxed">
+            Four specialized transport categories — each with customized vehicle layouts, shock-absorbing rack brackets, and dual-zone temperature calibrations.
           </p>
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24 md:space-y-32">
-          {services.map((service, index) => (
+      {/* 2. Detailed Service Capability Sections (Alternating Layout) */}
+      <section className="py-24 bg-[#FAF9F5]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-32">
+          {serviceDetails.map((service, index) => (
             <div
               key={service.id}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+              id={service.id}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center scroll-mt-24"
             >
-              {/* Image */}
-              <div className={index % 2 === 1 ? "lg:order-2" : "lg:order-1"}>
-                <div className="relative">
-                  <div className="rounded-3xl overflow-hidden shadow-xl">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-72 md:h-[420px] object-cover"
-                    />
-                  </div>
-                  <div
-                    className={`absolute -bottom-4 ${
-                      index % 2 === 1 ? "-left-4" : "-right-4"
-                    } ${service.accent} rounded-2xl p-4 shadow-lg`}
-                  >
-                    <service.icon
-                      className={`w-8 h-8 ${service.accentDark}`}
-                    />
-                  </div>
-                </div>
+              
+              {/* Image Column: Alternate left/right based on index (Span 5) */}
+              <div className={`lg:col-span-5 relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/3] bg-transparent border border-[#1C1716]/10 p-2 ${
+                index % 2 === 1 ? "lg:order-2" : "lg:order-1"
+              }`}>
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                />
               </div>
 
-              {/* Content */}
-              <div className={index % 2 === 1 ? "lg:order-1" : "lg:order-2"}>
-                <span
-                  className={`inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase mb-4 ${service.accent} ${service.accentDark}`}
-                >
-                  {service.subtitle}
-                </span>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-espresso mb-4">
-                  {service.title}
-                </h2>
-                <p className="text-espresso-muted leading-relaxed mb-8">
-                  {service.description}
-                </p>
+              {/* Capability Detail Column: (Span 7) */}
+              <div className={`lg:col-span-7 space-y-8 text-left ${
+                index % 2 === 1 ? "lg:order-1" : "lg:order-2"
+              }`}>
+                
+                {/* Badge & Title */}
+                <div className="space-y-4">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4AF37]">
+                    {service.badge}
+                  </span>
+                  <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#1C1716] leading-tight tracking-wide">
+                    {service.title}
+                  </h2>
+                  <p className="text-sm text-[#1C1716]/75 leading-relaxed font-light font-sans">
+                    {service.desc}
+                  </p>
+                </div>
 
-                {/* Features */}
-                <div className="space-y-4 mb-8">
-                  {service.features.map((feature, fi) => (
-                    <div key={fi} className="flex items-center gap-3">
-                      <div
-                        className={`w-9 h-9 rounded-lg ${service.accent} flex items-center justify-center shrink-0`}
-                      >
-                        <feature.icon
-                          className={`w-4 h-4 ${service.accentDark}`}
-                        />
+                {/* Capabilities list with icons */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[#1C1716]/10">
+                  {service.capabilities.map((cap, capIdx) => {
+                    const CapIcon = cap.icon;
+                    return (
+                      <div key={capIdx} className="flex items-start gap-3">
+                        <div className="w-7 h-7 bg-[#1C1716] text-[#E5D3B3] flex items-center justify-center shrink-0">
+                          <CapIcon className="w-4 h-4" />
+                        </div>
+                        <span className="text-xs text-[#1C1716]/80 leading-relaxed font-light">
+                          {cap.label}
+                        </span>
                       </div>
-                      <span className="text-sm font-medium text-espresso">
-                        {feature.label}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
-                <Button href="/quote" variant="primary">
-                  Get a Quote
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
+                {/* Rates Enquiry Trigger */}
+                <div className="pt-4">
+                  <Link
+                    href="/quote"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-[#1C1716] text-[10px] tracking-widest uppercase font-semibold text-[#1C1716] bg-transparent hover:bg-[#1C1716] hover:text-[#FAF9F5] transition-all duration-500 rounded-none cursor-pointer"
+                  >
+                    Request Route Rates
+                    <ArrowRight className="w-3.5 h-3.5 ml-2" />
+                  </Link>
+                </div>
+
               </div>
+
             </div>
           ))}
         </div>
       </section>
-    </>
+
+      {/* 3. Bottom Call To Action Banner */}
+      <section className="py-20 bg-[#1C1716] text-[#FAF9F5] border-t border-[#FAF9F5]/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center space-y-8 select-none">
+          <h3 className="font-serif text-3xl sm:text-4xl font-normal text-[#FAF9F5] leading-snug tracking-wide">
+            Need a Specialized Logistics Quote?
+          </h3>
+          <p className="text-sm text-[#FAF9F5]/70 max-w-xl mx-auto font-light leading-relaxed">
+            Discuss morning pickup schedules, anti-vibration systems, or cold-chain locker telemetry with our routes and dispatch controllers.
+          </p>
+          <div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#FAF9F5] text-[#1C1716] border border-[#FAF9F5] hover:bg-transparent hover:text-[#FAF9F5] transition-all duration-500 text-[10px] tracking-widest uppercase font-semibold rounded-none cursor-pointer"
+            >
+              Get in Touch with Route Planners
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }
