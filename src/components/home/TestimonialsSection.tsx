@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-sage/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Heading */}
         <SectionHeading
           label="Testimonials"
@@ -57,11 +57,11 @@ export default function TestimonialsSection() {
         {/* Testimonial card */}
         <div className="max-w-4xl mx-auto mt-12">
           <div className="relative bg-white/5 backdrop-blur-md rounded-[32px] border border-white/10 p-8 sm:p-12 md:p-16">
-            
+
             <Quote className="w-16 h-16 sm:w-24 sm:h-24 text-gold/5 absolute right-8 bottom-8 pointer-events-none" />
 
             <div className="flex flex-col md:flex-row gap-8 sm:gap-12 items-center">
-              
+
               {/* Image */}
               <div className="shrink-0 relative">
                 <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl relative z-10">
@@ -105,18 +105,17 @@ export default function TestimonialsSection() {
 
           {/* Slider Controllers */}
           <div className="flex items-center justify-between mt-8 px-4">
-            
+
             {/* Dots navigation */}
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === active
+                  className={`h-2 rounded-full transition-all duration-300 ${i === active
                       ? "w-8 bg-gold"
                       : "w-2 bg-white/20 hover:bg-white/40"
-                  }`}
+                    }`}
                   aria-label={`Show testimonial ${i + 1}`}
                 />
               ))}

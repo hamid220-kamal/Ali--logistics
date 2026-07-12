@@ -27,6 +27,12 @@ module.exports = {
           muted: "#7A6E6B",
         },
         "warm-white": "#FFFDF9",
+        pearl: "#FAF9F5",
+        champagne: {
+          DEFAULT: "#D4AF37",
+          light: "#E5D3B3",
+        },
+        "velvet-espresso": "#1C1716",
       },
       fontFamily: {
         sans: ["var(--font-sans-custom)", "ui-sans-serif", "system-ui", "sans-serif"],

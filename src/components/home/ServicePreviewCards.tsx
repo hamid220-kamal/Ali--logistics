@@ -8,7 +8,7 @@ export default function ServicePreviewCards() {
   return (
     <section className="py-20 md:py-28 bg-[#F2EDE3]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Editorial Heading */}
         <SectionHeading
           label="Our Transportation Classes"
@@ -18,13 +18,13 @@ export default function ServicePreviewCards() {
 
         {/* Symmetrical Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mt-12">
-          
+
           {/* Card 1: Scheduled Routes */}
           <div className="flex flex-col h-full">
             <Card hover padding="lg" className="flex-1 flex flex-col justify-between overflow-hidden relative group bg-warm-white border border-gold/15 h-full">
               {/* Background Accent Decorative Image Overlay */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-15 transition-opacity duration-500 pointer-events-none" 
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-15 transition-opacity duration-500 pointer-events-none"
                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555507036-ab1f4038024a?q=80&w=800')" }}
               />
 
@@ -33,14 +33,14 @@ export default function ServicePreviewCards() {
                   <CalendarClock className="w-3.5 h-3.5 text-gold-dark" />
                   Primary Route
                 </div>
-                
+
                 <h3 className="font-display text-2xl font-bold text-espresso">
                   Morning Scheduled Routes
                 </h3>
-                
+
                 <p className="text-espresso-muted text-sm leading-relaxed">
-                  We run optimized multi-stop distribution paths starting at 3:00 AM. 
-                  Artisan bakeries rely on us to deliver warm croissants, fresh sourdough, and prepared 
+                  We run optimized multi-stop distribution paths starting at 3:00 AM.
+                  Artisan bakeries rely on us to deliver warm croissants, fresh sourdough, and prepared
                   bagels before doors open.
                 </p>
 
@@ -90,7 +90,7 @@ export default function ServicePreviewCards() {
                     Tiered & Wedding Cakes
                   </h3>
                   <p className="text-espresso-muted text-sm leading-relaxed">
-                    Custom modular rack structures and low-impact pneumatic suspension 
+                    Custom modular rack structures and low-impact pneumatic suspension
                     keep delicate structures level and safe over any terrain, assuring wedding-day perfection.
                   </p>
                 </div>
@@ -124,7 +124,7 @@ export default function ServicePreviewCards() {
                     Chilled Pastries & Dessert
                   </h3>
                   <p className="text-espresso-muted text-sm leading-relaxed">
-                    Continuous IoT monitoring maintains temperatures between 2°C and 8°C. 
+                    Continuous IoT monitoring maintains temperatures between 2°C and 8°C.
                     Automatic mobile warning locks prevent melted ganache or soft fillings.
                   </p>
                 </div>
