@@ -62,16 +62,16 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3.5 py-2 text-sm font-semibold rounded-xl transition-all duration-300 ${
-                    isActive
-                      ? "text-espresso bg-gold/25"
-                      : "text-espresso-muted hover:text-espresso hover:bg-gold/15"
+                  className={`relative px-1 py-1 text-sm font-semibold transition-all duration-300 group ${
+                    isActive ? "text-espresso font-bold" : "text-espresso-muted hover:text-espresso"
                   }`}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-espresso" />
-                  )}
+                  <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-amber-600 transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
                 </Link>
               );
             })}
