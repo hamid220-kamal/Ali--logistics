@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "glass-nav shadow-md border-b border-gold/20 py-3"
           : "bg-transparent py-5"
@@ -41,34 +41,20 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div
-              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                scrolled || pathname !== "/"
-                  ? "bg-espresso"
-                  : "bg-white/10 backdrop-blur-sm"
-              }`}
-            >
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-espresso transition-all duration-300 shadow-sm">
               <Truck className="w-5 h-5 text-gold" />
             </div>
             <div className="flex flex-col">
-              <span
-                className={`text-xl font-bold leading-none tracking-tight transition-colors duration-300 ${
-                  scrolled || pathname !== "/" ? "text-espresso" : "text-cream"
-                }`}
-              >
+              <span className="text-xl font-bold leading-none tracking-tight text-espresso transition-colors duration-300">
                 Ali
               </span>
-              <span
-                className={`text-[10px] font-semibold uppercase tracking-[0.2em] leading-none mt-1 transition-colors duration-300 ${
-                  scrolled || pathname !== "/" ? "text-espresso-muted" : "text-cream/60"
-                }`}
-              >
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] leading-none mt-1 text-espresso-muted transition-colors duration-300">
                 Logistics
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav links (Comfortable layout, no redundant link) */}
+          {/* Desktop Nav links (Comfortable high-contrast layout) */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -76,38 +62,26 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                    scrolled || pathname !== "/"
-                      ? isActive
-                        ? "text-espresso bg-gold/30"
-                        : "text-espresso-muted hover:text-espresso hover:bg-gold-light"
-                      : isActive
-                      ? "text-gold bg-white/10"
-                      : "text-cream/80 hover:text-cream hover:bg-white/10"
+                  className={`relative px-3.5 py-2 text-sm font-semibold rounded-xl transition-all duration-300 ${
+                    isActive
+                      ? "text-espresso bg-gold/25"
+                      : "text-espresso-muted hover:text-espresso hover:bg-gold/15"
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span
-                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full ${
-                        scrolled || pathname !== "/" ? "bg-espresso" : "bg-gold"
-                      }`}
-                    />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-espresso" />
                   )}
                 </Link>
               );
             })}
           </div>
 
-          {/* Desktop CTA (Comfortable layout) */}
+          {/* Desktop CTA */}
           <div className="hidden lg:block shrink-0">
             <Link
               href="/quote"
-              className={`inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 btn-shine ${
-                scrolled || pathname !== "/"
-                  ? "bg-espresso text-cream hover:bg-espresso-light"
-                  : "bg-gold text-espresso hover:bg-gold-dark"
-              }`}
+              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-espresso text-cream hover:bg-espresso-light transition-all duration-300 btn-shine"
             >
               Get a Quote
             </Link>
@@ -116,11 +90,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 ${
-              scrolled || pathname !== "/"
-                ? "hover:bg-gold-light focus:ring-gold text-espresso"
-                : "hover:bg-white/10 focus:ring-white text-cream"
-            }`}
+            className="lg:hidden p-2 rounded-xl transition-colors duration-200 focus:outline-none focus:ring-2 hover:bg-gold-light focus:ring-gold text-espresso"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
           >
