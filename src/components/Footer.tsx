@@ -12,10 +12,10 @@ const quickLinks = [
 ];
 
 const services = [
-  "Scheduled Routes",
-  "Large Cake Transport",
-  "Temperature Controlled",
-  "Special Events",
+  "Refrigerated Transport",
+  "General Freight",
+  "Express Delivery",
+  "Warehousing & Distribution",
   "Same-Day Delivery",
 ];
 
@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 text-left">
 
-          {/* Brand & Socials Column */}
+          {/* Brand & Tagline Column */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2.5">
               <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center">
@@ -42,8 +42,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
-              Specialized bakery transport solutions ensuring your baked goods
-              arrive fresh, intact, and on time — every single morning delivery run.
+              Moving Goods, Building Relationships. Sydney&apos;s trusted partner for refrigerated and general freight transport — reliable, insured, and on time.
             </p>
             <div className="flex gap-3 pt-2">
               {["Facebook", "Instagram", "LinkedIn"].map((social) => (
@@ -101,34 +100,33 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
                 <span className="text-sm text-slate-400">
-                  No. 3, Jalan Subang 6, USJ 1,
-                  <br />
-                  Subang Jaya, 47600 Selangor
+                  Sydney, NSW, Australia<br />
+                  (Full address coming soon)
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-sky-400 shrink-0" />
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+61200000000"
                   className="text-sm text-slate-400 hover:text-sky-400 transition-colors duration-200"
                 >
-                  (555) 123-4567
+                  +61 2 0000 0000
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-sky-400 shrink-0" />
                 <a
-                  href="mailto:hello@alilogistics.com"
+                  href="mailto:hello@alilogistics.com.au"
                   className="text-sm text-slate-400 hover:text-sky-400 transition-colors duration-200"
                 >
-                  hello@alilogistics.com
+                  hello@alilogistics.com.au
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
                 <div className="text-sm text-slate-400 space-y-1">
-                  <p>Mon – Fri: 3:00 AM – 6:00 PM</p>
-                  <p>Sat: 4:00 AM – 12:00 PM</p>
+                  <p>Mon – Fri: 7:00 AM – 6:00 PM</p>
+                  <p>Sat: 8:00 AM – 1:00 PM</p>
                   <p>Sun: Closed</p>
                 </div>
               </li>
@@ -142,7 +140,7 @@ export default function Footer() {
       <div className="border-t border-slate-800 py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500">
           <p className="text-xs">
-            © {new Date().getFullYear()} Ali Logistics. All rights reserved.
+            © {new Date().getFullYear()} Ali Logistics. All rights reserved. Sydney, NSW, Australia.
           </p>
           <div className="flex gap-4">
             <a href="#" className="text-xs hover:text-slate-400 transition-colors">Privacy Policy</a>

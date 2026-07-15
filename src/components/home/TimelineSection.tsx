@@ -1,31 +1,31 @@
 import React from "react";
-import { Clock, Truck, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { PhoneCall, CalendarCheck, Truck, MapPin, ShieldCheck, CheckCircle2 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 
 const flowSteps = [
   {
-    time: "03:00 AM",
-    title: "Pre-Cooling & Diagnostic Checks",
-    description: "Refrigerated vehicle locker compartments are pre-cooled to their required temperatures (down to 2°C) and diagnostic IoT sensors are calibrated.",
-    icon: Clock,
+    step: "Step 1",
+    title: "Book Your Pickup",
+    description: "Contact us online, by phone, or via our quote form. Tell us what you need transported, where from, and when — and we'll confirm your booking fast.",
+    icon: PhoneCall,
   },
   {
-    time: "04:00 AM",
-    title: "Oven-Fresh Loading",
-    description: "Breads, croissants, and fragile event cakes are carefully loaded directly from hot bakery ovens into custom shock-absorbing cabinets.",
-    icon: ShieldCheck,
+    step: "Step 2",
+    title: "We Collect From You",
+    description: "Our driver arrives at your premises at the agreed time. We handle the loading carefully and securely, with the right vehicle matched to your freight type.",
+    icon: CalendarCheck,
   },
   {
-    time: "05:30 AM",
-    title: "Monitored Safe Transit",
-    description: "Drivers follow AI-optimized routes while live temperature readings and suspension telemetry are continuously streamed to our dispatch center.",
+    step: "Step 3",
+    title: "Safe Transit & Tracking",
+    description: "Your goods are transported in the appropriate vehicle — refrigerated or general freight — with real-time GPS tracking available throughout the journey.",
     icon: Truck,
   },
   {
-    time: "07:00 AM",
-    title: "Café & Shelf Stocking Completed",
-    description: "Baked goods are hand-delivered and placed on café shelves, pristine and fresh, before the first morning customer arrives.",
+    step: "Step 4",
+    title: "On-Time Delivery Confirmed",
+    description: "We deliver to your specified location safely and on time. You receive delivery confirmation, and our team follows up to ensure your satisfaction.",
     icon: CheckCircle2,
   },
 ];
@@ -35,30 +35,26 @@ export default function TimelineSection() {
     <section className="py-24 bg-white relative overflow-hidden border-t border-b border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Title */}
         <SectionHeading
-          label="Operational Excellence"
-          title="The Early Morning Flow"
-          subtitle="Every delivery follows a precise sequence to protect texture, structure, and freshness."
+          label="How It Works"
+          title="Our Simple Delivery Process"
+          subtitle="From your first call to the final delivery confirmation — four straightforward steps to get your freight moving across Sydney."
         />
 
-        {/* Desktop Horizontal / Mobile Vertical Timeline */}
         <div className="relative mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 relative z-10">
             {flowSteps.map((step, idx) => (
               <Card key={idx} hover padding="lg" className="flex flex-col justify-between h-auto bg-slate-50 border border-slate-100 shadow-sm relative group rounded-2xl">
                 <div className="space-y-4 text-left">
-                  {/* Step Header */}
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-sky-700 bg-sky-100 px-3 py-1 rounded-full">
-                      {step.time}
+                      {step.step}
                     </span>
-                    <div className="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
+                    <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-sky-300 group-hover:scale-110 transition-transform">
                       <step.icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  {/* Title & Body */}
                   <div className="space-y-2">
                     <h4 className="font-sans text-lg font-extrabold text-slate-900 leading-snug">
                       {step.title}

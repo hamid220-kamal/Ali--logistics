@@ -7,18 +7,18 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 const slides = [
   {
     url: "https://images.unsplash.com/photo-1601584115197-04eefb24fc91?q=80&w=1600&auto=format&fit=crop",
-    title: "PROFESSIONAL COLD CHAIN TRANSPORT",
-    subtitle: "IoT-monitored refrigerated vehicles delivering fresh pastries and bread before dawn.",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1516576885505-143003087037?q=80&w=1600&auto=format&fit=crop",
-    title: "CALIBRATED HUMIDITY LOCKERS",
-    subtitle: "Precision climate zones locked at 4.2°C to safeguard delicate cake structures.",
+    title: "RELIABLE REFRIGERATED & GENERAL FREIGHT TRANSPORT",
+    subtitle: "Ali Logistics provides dependable transport solutions for businesses across Sydney. Your goods arrive safely, on time, every time.",
   },
   {
     url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
-    title: "EFFICIENT LAST-MILE DISPATCH",
-    subtitle: "Connecting commercial commissaries to local retail networks with 99.8% on-time ETA.",
+    title: "MOVING GOODS, BUILDING RELATIONSHIPS",
+    subtitle: "From temperature-controlled deliveries to general freight — we are Sydney's trusted transport specialists serving businesses of all sizes.",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519003300449-424ad0405076?q=80&w=1600&auto=format&fit=crop",
+    title: "FULLY INSURED. PROFESSIONALLY STAFFED.",
+    subtitle: "Every load is fully insured and handled by our professional team. Your freight is in safe hands across Greater Sydney and surrounding areas.",
   },
 ];
 
@@ -44,14 +44,12 @@ export default function ThreeDCarousel() {
             idx === active ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {/* Background Image */}
           <img
             src={slide.url}
             alt={slide.title}
             className="w-full h-full object-cover transform scale-105 transition-transform duration-7000 ease-out"
           />
-          {/* Dark Navy Vignette Overlay */}
-          <div className="absolute inset-0 bg-slate-950/50 backdrop-brightness-75" />
+          <div className="absolute inset-0 bg-slate-950/55 backdrop-brightness-75" />
         </div>
       ))}
 
@@ -61,7 +59,7 @@ export default function ThreeDCarousel() {
           
           {/* Value Subtitle */}
           <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-400 select-none">
-            Temperature-Controlled · Real-Time IoT · On-Time
+            Sydney Based · Fully Insured · On-Time Guaranteed
           </p>
 
           {/* Centered Bold Title */}
@@ -77,13 +75,13 @@ export default function ThreeDCarousel() {
           {/* Value Indicators */}
           <div className="border-t border-b border-white/10 py-4 flex justify-around max-w-2xl mx-auto gap-4 text-white select-none">
             <div className="flex items-center gap-2">
-              <span className="text-xs uppercase tracking-widest font-bold">4.2°C Avg</span>
+              <span className="text-xs uppercase tracking-widest font-bold">Refrigerated</span>
               <span className="text-[9px] text-sky-300 uppercase tracking-widest font-semibold">Cold Chain</span>
             </div>
             <div className="w-px h-4 bg-white/10" />
             <div className="flex items-center gap-2">
-              <span className="text-xs uppercase tracking-widest font-bold">FDA Valid</span>
-              <span className="text-[9px] text-sky-300 uppercase tracking-widest font-semibold">Food-Safe</span>
+              <span className="text-xs uppercase tracking-widest font-bold">Fully Insured</span>
+              <span className="text-[9px] text-sky-300 uppercase tracking-widest font-semibold">All Loads</span>
             </div>
             <div className="w-px h-4 bg-white/10" />
             <div className="flex items-center gap-2">
@@ -98,21 +96,21 @@ export default function ThreeDCarousel() {
               href="/quote"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-[10px] font-bold uppercase tracking-widest text-slate-900 bg-white hover:bg-sky-50 transition-all duration-300 rounded-lg shadow-md cursor-pointer"
             >
-              Request a Custom Quote
+              Request a Quote
               <ArrowRight className="w-4 h-4 ml-2 text-sky-600" />
             </Link>
             <Link
-              href="/services"
+              href="tel:+61200000000"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-[10px] font-bold uppercase tracking-widest text-white bg-transparent border border-white/20 hover:border-white hover:bg-white/5 transition-all duration-300 rounded-lg cursor-pointer"
             >
-              Explore Our Methods
+              Call Now
             </Link>
           </div>
 
         </div>
       </div>
 
-      {/* Circular Arrow Navigation Triggers */}
+      {/* Arrow Navigation */}
       <div className="absolute inset-y-0 left-4 sm:left-6 z-30 flex items-center">
         <button
           onClick={prev}
@@ -132,14 +130,14 @@ export default function ThreeDCarousel() {
         </button>
       </div>
 
-      {/* Circular Pagination Dots */}
+      {/* Pagination Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setActive(idx)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-              idx === active ? "bg-sky-400 w-6" : "bg-white/35 hover:bg-white/50"
+            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+              idx === active ? "bg-sky-400 w-6" : "w-2.5 bg-white/35 hover:bg-white/50"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
