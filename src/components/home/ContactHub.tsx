@@ -18,20 +18,20 @@ export default function ContactHub() {
   };
 
   return (
-    <section className="py-24 bg-[#FAF9F5] border-t border-[#1C1716]/10 relative overflow-hidden" id="contact-hub">
+    <section className="py-24 bg-white border-t border-slate-100 relative overflow-hidden" id="contact-hub">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="space-y-20 max-w-6xl mx-auto">
           
           {/* Request for Quotation (RFQ) Download Banner */}
-          <div className="border border-[#1C1716]/10 p-8 sm:p-12 relative rounded-none flex flex-col md:flex-row items-center justify-between gap-8 bg-transparent hover:border-[#D4AF37]/50 transition-all duration-300">
-            <div className="space-y-4 text-left max-w-3xl">
-              <span className="text-[9px] font-bold tracking-[0.25em] text-[#D4AF37] uppercase">
+          <div className="border border-slate-100 p-8 sm:p-12 relative rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 bg-slate-50 hover:border-sky-300/80 transition-all duration-300 shadow-sm text-left">
+            <div className="space-y-4 max-w-3xl">
+              <span className="text-[9px] font-bold tracking-[0.25em] text-sky-600 uppercase">
                 Rates & Inquiry
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#1C1716] font-normal leading-snug">
+              <h3 className="font-sans text-2xl sm:text-3xl text-slate-900 font-extrabold leading-snug">
                 Request for Quotation
               </h3>
-              <p className="text-sm text-[#1C1716]/75 leading-relaxed font-light font-sans">
+              <p className="text-sm text-slate-600 leading-relaxed font-light">
                 For detailed freight logistics inquiries or multi-stop route calculations, download our physical RFQ spec sheet, fill it out with your cargo volume parameters, and email it directly to dispatch.
               </p>
             </div>
@@ -42,9 +42,9 @@ export default function ContactHub() {
                   e.preventDefault();
                   alert("RFQ PDF template download triggered.");
                 }}
-                className="w-full md:w-auto inline-flex items-center justify-center px-6 py-4 border border-[#1C1716] text-[10px] tracking-widest uppercase font-semibold text-[#1C1716] bg-transparent hover:bg-[#1C1716] hover:text-[#FAF9F5] transition-all duration-500 rounded-none cursor-pointer"
+                className="w-full md:w-auto inline-flex items-center justify-center px-6 py-3.5 border border-slate-900 text-[10px] tracking-widest uppercase font-bold text-slate-900 bg-transparent hover:bg-slate-900 hover:text-white transition-all duration-500 rounded-lg cursor-pointer"
               >
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-4.5 h-4.5 mr-2 text-sky-600" />
                 Download RFQ Form (PDF)
               </a>
             </div>
@@ -56,13 +56,13 @@ export default function ContactHub() {
             {/* Left Side: Contact Form & Office Coordinates (Span 6) */}
             <div className="lg:col-span-6 space-y-12 text-left">
               <div className="space-y-4">
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4AF37]">
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-sky-500">
                   Enquiry Desk
                 </span>
-                <h4 className="font-serif text-3xl font-normal text-[#1C1716] tracking-wide">
+                <h4 className="font-sans text-3xl font-extrabold text-slate-900 tracking-tight">
                   Contact Our Dispatch Team
                 </h4>
-                <p className="text-sm text-[#1C1716]/70 leading-relaxed font-light">
+                <p className="text-sm text-slate-600 leading-relaxed font-light">
                   Submit your bakery volume details, route scheduling requirements, or anti-vibration cargo needs below and a controller will follow up shortly.
                 </p>
               </div>
@@ -71,7 +71,7 @@ export default function ContactHub() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="form-name" className="text-[10px] uppercase tracking-widest font-bold text-[#1C1716]/60">
+                    <label htmlFor="form-name" className="text-[10px] uppercase tracking-widest font-bold text-slate-500">
                       Your Name
                     </label>
                     <input
@@ -81,11 +81,11 @@ export default function ContactHub() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Maria Santos"
-                      className="w-full border border-[#1C1716]/10 px-4 py-3 bg-[#1C1716]/5 text-sm text-[#1C1716] placeholder-[#1C1716]/40 focus:border-[#D4AF37] focus:outline-none transition-all rounded-none font-light"
+                      className="w-full border border-slate-200 px-4 py-3 bg-slate-50 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:bg-white focus:outline-none transition-all rounded-lg font-light"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="form-email" className="text-[10px] uppercase tracking-widest font-bold text-[#1C1716]/60">
+                    <label htmlFor="form-email" className="text-[10px] uppercase tracking-widest font-bold text-slate-500">
                       Email Address
                     </label>
                     <input
@@ -95,15 +95,15 @@ export default function ContactHub() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. maria@artisan.com"
-                      className="w-full border border-[#1C1716]/10 px-4 py-3 bg-[#1C1716]/5 text-sm text-[#1C1716] placeholder-[#1C1716]/40 focus:border-[#D4AF37] focus:outline-none transition-all rounded-none font-light"
+                      className="w-full border border-slate-200 px-4 py-3 bg-slate-50 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:bg-white focus:outline-none transition-all rounded-lg font-light"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="form-phone" className="text-[10px] uppercase tracking-widest font-bold text-[#1C1716]/60">
+                  <label htmlFor="form-phone" className="text-[10px] uppercase tracking-widest font-bold text-slate-500">
                     Phone Number
-                    <span className="text-[9px] text-[#1C1716]/40 lowercase pl-1">(optional)</span>
+                    <span className="text-[9px] text-slate-400 lowercase pl-1">(optional)</span>
                   </label>
                   <input
                     id="form-phone"
@@ -111,12 +111,12 @@ export default function ContactHub() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="e.g. (555) 123-4567"
-                    className="w-full border border-[#1C1716]/10 px-4 py-3 bg-[#1C1716]/5 text-sm text-[#1C1716] placeholder-[#1C1716]/40 focus:border-[#D4AF37] focus:outline-none transition-all rounded-none font-light"
+                    className="w-full border border-slate-200 px-4 py-3 bg-slate-50 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:bg-white focus:outline-none transition-all rounded-lg font-light"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="form-message" className="text-[10px] uppercase tracking-widest font-bold text-[#1C1716]/60">
+                  <label htmlFor="form-message" className="text-[10px] uppercase tracking-widest font-bold text-slate-500">
                     Routing & Cargo Details
                   </label>
                   <textarea
@@ -126,13 +126,13 @@ export default function ContactHub() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your bakery volume, required pickup times, or anti-vibration transport specs..."
-                    className="w-full border border-[#1C1716]/10 px-4 py-3 bg-[#1C1716]/5 text-sm text-[#1C1716] placeholder-[#1C1716]/40 focus:border-[#D4AF37] focus:outline-none transition-all rounded-none resize-none font-light"
+                    className="w-full border border-slate-200 px-4 py-3 bg-slate-50 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:bg-white focus:outline-none transition-all rounded-lg resize-none font-light"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#1C1716] text-[#FAF9F5] border border-[#1C1716] hover:bg-transparent hover:text-[#1C1716] transition-all duration-500 text-[10px] tracking-widest uppercase font-semibold rounded-none cursor-pointer"
+                  className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-slate-900 text-white border border-slate-900 hover:bg-transparent hover:text-slate-900 transition-all duration-500 text-[10px] tracking-widest uppercase font-bold rounded-lg cursor-pointer"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Submit Request to Dispatch
@@ -142,19 +142,19 @@ export default function ContactHub() {
 
             {/* Right Side: Map Staging Area (Span 6) */}
             <div className="lg:col-span-6 w-full space-y-6">
-              <div className="w-full aspect-video border border-[#1C1716]/10 bg-[#1C1716]/5 p-2 relative flex items-center justify-center overflow-hidden">
+              <div className="w-full aspect-video border border-slate-100 bg-slate-50 p-2 relative flex items-center justify-center overflow-hidden rounded-2xl">
                 {/* Mock Staging Google Map Box */}
-                <div className="absolute inset-0 bg-[#FAF9F5]/40 opacity-80 z-0 pointer-events-none" />
+                <div className="absolute inset-0 bg-white/45 opacity-80 z-0 pointer-events-none" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-6 text-center space-y-3">
-                  <MapPin className="w-8 h-8 text-[#D4AF37]" />
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#1C1716]/60">
+                  <MapPin className="w-8 h-8 text-sky-500" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-500">
                     Ali Logistics Hub Staging Area
                   </span>
-                  <p className="text-xs text-[#1C1716]/80 font-light max-w-sm">
-                    123 Artisan Parkway, Suite B, Logistics Hub, CA 90210
+                  <p className="text-xs text-slate-700 font-light max-w-sm">
+                    No. 3, Jalan Subang 6, USJ 1, Subang Jaya, Selangor
                   </p>
-                  <div className="w-24 h-[1px] bg-[#1C1716]/15" />
-                  <span className="text-[9px] font-semibold text-[#D4AF37] uppercase tracking-widest leading-none">
+                  <div className="w-24 h-[1px] bg-slate-200" />
+                  <span className="text-[9px] font-bold text-sky-600 uppercase tracking-widest leading-none">
                     Route coordinates active
                   </span>
                 </div>
@@ -163,23 +163,23 @@ export default function ContactHub() {
               </div>
 
               {/* Operational quick-reference box */}
-              <div className="border border-[#1C1716]/10 p-6 flex flex-col sm:flex-row justify-between gap-6 items-start sm:items-center">
-                <div className="space-y-1 text-left">
-                  <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#1C1716]/60">
+              <div className="border border-slate-100 rounded-2xl p-6 flex flex-col sm:flex-row justify-between gap-6 items-start sm:items-center bg-slate-50 text-left">
+                <div className="space-y-1">
+                  <h5 className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
                     Direct Hotlines
                   </h5>
-                  <p className="text-xs text-[#1C1716] font-semibold leading-relaxed">
+                  <p className="text-xs text-slate-800 font-bold leading-relaxed">
                     Dispatch: (555) 123-4567
                   </p>
-                  <p className="text-xs text-[#1C1716] font-semibold leading-relaxed">
+                  <p className="text-xs text-slate-800 font-bold leading-relaxed">
                     Office: hello@alilogistics.com
                   </p>
                 </div>
-                <div className="w-full sm:w-auto text-left">
-                  <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#1C1716]/60">
+                <div>
+                  <h5 className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
                     Staging Hours
                   </h5>
-                  <p className="text-xs text-[#1C1716] font-semibold leading-relaxed">
+                  <p className="text-xs text-slate-800 font-bold leading-relaxed">
                     Pre-dawn staging: 3 AM - 6 PM
                   </p>
                 </div>

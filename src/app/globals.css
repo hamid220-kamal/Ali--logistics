@@ -11,21 +11,21 @@ html {
 }
 
 body {
-  background-color: #FAF9F5;
-  color: #1C1716;
+  background-color: #FFFFFF;
+  color: #0F172A;
   line-height: 1.7;
   overflow-x: hidden;
 }
 
 /* ─── Custom Utility Classes ─── */
 .glass-nav {
-  background: rgba(250, 249, 245, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #E5C98A 0%, #F4E0B9 50%, #D4A853 100%);
+  background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -63,14 +63,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF7F0;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5C98A;
+  background: #CBD5E1;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7A6E6B;
+  background: #0284C7;
 }

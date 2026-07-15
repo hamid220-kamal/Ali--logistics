@@ -21,8 +21,8 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`bg-warm-white rounded-2xl shadow-sm border border-gold/20 ${paddingStyles[padding]} ${
-        hover ? "transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl" : ""
+      className={`bg-white rounded-2xl border border-slate-100 ${paddingStyles[padding]} ${
+        hover ? "transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-sky-200" : ""
       } ${className}`}
     >
       {children}

@@ -8,35 +8,35 @@ module.exports = {
     extend: {
       colors: {
         cream: {
-          DEFAULT: "#FAF7F0",
-          dark: "#F2EDE3",
+          DEFAULT: "#FFFFFF",
+          dark: "#F8FAFC",
         },
         gold: {
-          DEFAULT: "#F4E0B9",
-          dark: "#E5C98A",
-          light: "#FBF2E0",
+          DEFAULT: "#0284C7", // Sky-600 (Ice Blue Highlight)
+          dark: "#0369A1", // Sky-700
+          light: "#E0F2FE", // Sky-100 (Ice Blue Light)
         },
         sage: {
-          DEFAULT: "#D4E2D5",
-          dark: "#A8C5AA",
-          light: "#E8F0E9",
+          DEFAULT: "#F0F9FF",
+          dark: "#0284C7",
+          light: "#E0F2FE",
         },
         espresso: {
-          DEFAULT: "#2C2523",
-          light: "#4A3F3C",
-          muted: "#7A6E6B",
+          DEFAULT: "#0F172A", // Dark Navy
+          light: "#1E293B",
+          muted: "#64748B",
         },
-        "warm-white": "#FFFDF9",
-        pearl: "#FAF9F5",
+        "warm-white": "#FFFFFF",
+        pearl: "#FFFFFF",
         champagne: {
-          DEFAULT: "#D4AF37",
-          light: "#E5D3B3",
+          DEFAULT: "#0284C7",
+          light: "#E0F2FE",
         },
-        "velvet-espresso": "#1C1716",
+        "velvet-espresso": "#0F172A",
       },
       fontFamily: {
-        sans: ["var(--font-sans-custom)", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["var(--font-display-custom)", "ui-serif", "Georgia", "serif"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
     },
   },

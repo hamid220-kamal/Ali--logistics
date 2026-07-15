@@ -75,33 +75,33 @@ const serviceDetails = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#FAF9F5] text-[#1C1716] font-sans">
+    <div className="bg-white text-slate-900 font-sans">
       
       {/* 1. Hero Banner Section */}
-      <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden bg-[#1C1716] pt-16">
+      <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden bg-slate-900 pt-16">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1601584115197-04eefb24fc91?q=80&w=1600&auto=format&fit=crop"
             alt="Bakery transport fleet"
-            className="w-full h-full object-cover opacity-25 transform scale-105"
+            className="w-full h-full object-cover opacity-20 transform scale-105"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-slate-950/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#E5D3B3]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-sky-400">
             Operational Classes
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#FAF9F5] tracking-wide">
+          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
             Our Logistics Services
           </h1>
-          <p className="text-sm text-[#FAF9F5]/70 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-sm text-slate-350 max-w-2xl mx-auto font-light leading-relaxed">
             Four specialized transport categories — each with customized vehicle layouts, shock-absorbing rack brackets, and dual-zone temperature calibrations.
           </p>
         </div>
       </section>
 
-      {/* 2. Detailed Service Capability Sections (Alternating Layout) */}
-      <section className="py-24 bg-[#FAF9F5]">
+      {/* 2. Detailed Service Capability Sections */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-32">
           {serviceDetails.map((service, index) => (
             <div
@@ -110,45 +110,45 @@ export default function ServicesPage() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center scroll-mt-24"
             >
               
-              {/* Image Column: Alternate left/right based on index (Span 5) */}
-              <div className={`lg:col-span-5 relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/3] bg-transparent border border-[#1C1716]/10 p-2 ${
+              {/* Image Column */}
+              <div className={`lg:col-span-5 relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/3] bg-transparent border border-slate-100 p-2 rounded-2xl ${
                 index % 2 === 1 ? "lg:order-2" : "lg:order-1"
               }`}>
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500 rounded-xl"
                 />
               </div>
 
-              {/* Capability Detail Column: (Span 7) */}
+              {/* Capability Detail Column */}
               <div className={`lg:col-span-7 space-y-8 text-left ${
                 index % 2 === 1 ? "lg:order-1" : "lg:order-2"
               }`}>
                 
                 {/* Badge & Title */}
                 <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4AF37]">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-sky-500">
                     {service.badge}
                   </span>
-                  <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#1C1716] leading-tight tracking-wide">
+                  <h2 className="font-sans text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
                     {service.title}
                   </h2>
-                  <p className="text-sm text-[#1C1716]/75 leading-relaxed font-light font-sans">
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
                     {service.desc}
                   </p>
                 </div>
 
                 {/* Capabilities list with icons */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[#1C1716]/10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
                   {service.capabilities.map((cap, capIdx) => {
                     const CapIcon = cap.icon;
                     return (
                       <div key={capIdx} className="flex items-start gap-3">
-                        <div className="w-7 h-7 bg-[#1C1716] text-[#E5D3B3] flex items-center justify-center shrink-0">
+                        <div className="w-7 h-7 bg-slate-900 text-sky-300 flex items-center justify-center shrink-0 rounded-md">
                           <CapIcon className="w-4 h-4" />
                         </div>
-                        <span className="text-xs text-[#1C1716]/80 leading-relaxed font-light">
+                        <span className="text-xs text-slate-700 leading-relaxed font-light">
                           {cap.label}
                         </span>
                       </div>
@@ -160,10 +160,10 @@ export default function ServicesPage() {
                 <div className="pt-4">
                   <Link
                     href="/quote"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-[#1C1716] text-[10px] tracking-widest uppercase font-semibold text-[#1C1716] bg-transparent hover:bg-[#1C1716] hover:text-[#FAF9F5] transition-all duration-500 rounded-none cursor-pointer"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-slate-900 text-[10px] tracking-widest uppercase font-bold text-slate-900 bg-transparent hover:bg-slate-900 hover:text-white transition-all duration-500 rounded-lg cursor-pointer"
                   >
                     Request Route Rates
-                    <ArrowRight className="w-3.5 h-3.5 ml-2" />
+                    <ArrowRight className="w-3.5 h-3.5 ml-2 text-sky-600" />
                   </Link>
                 </div>
 
@@ -175,21 +175,21 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. Bottom Call To Action Banner */}
-      <section className="py-20 bg-[#1C1716] text-[#FAF9F5] border-t border-[#FAF9F5]/10">
+      <section className="py-20 bg-slate-900 text-white border-t border-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center space-y-8 select-none">
-          <h3 className="font-serif text-3xl sm:text-4xl font-normal text-[#FAF9F5] leading-snug tracking-wide">
+          <h3 className="font-sans text-3xl sm:text-4xl font-extrabold text-white leading-snug tracking-tight">
             Need a Specialized Logistics Quote?
           </h3>
-          <p className="text-sm text-[#FAF9F5]/70 max-w-xl mx-auto font-light leading-relaxed">
+          <p className="text-sm text-slate-350 max-w-xl mx-auto font-light leading-relaxed">
             Discuss morning pickup schedules, anti-vibration systems, or cold-chain locker telemetry with our routes and dispatch controllers.
           </p>
           <div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#FAF9F5] text-[#1C1716] border border-[#FAF9F5] hover:bg-transparent hover:text-[#FAF9F5] transition-all duration-500 text-[10px] tracking-widest uppercase font-semibold rounded-none cursor-pointer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 border border-white hover:bg-transparent hover:text-white transition-all duration-500 text-[10px] tracking-widest uppercase font-bold rounded-lg cursor-pointer"
             >
               Get in Touch with Route Planners
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-4 h-4 ml-2 text-sky-600" />
             </Link>
           </div>
         </div>

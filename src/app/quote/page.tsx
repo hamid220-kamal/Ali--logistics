@@ -38,12 +38,12 @@ const frequencies = [
 ];
 
 const inputClass =
-  "w-full border border-[#1C1716]/10 px-4 py-3 bg-[#1C1716]/5 text-sm text-[#1C1716] placeholder-[#1C1716]/40 focus:border-[#D4AF37] focus:outline-none transition-all rounded-none font-light";
+  "w-full border border-slate-200 px-4 py-3 bg-white text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:outline-none transition-all rounded-lg font-light";
 
 const selectClass =
-  "w-full border border-[#1C1716]/10 px-4 py-3 bg-[#1C1716]/5 text-sm text-[#1C1716] focus:border-[#D4AF37] focus:outline-none transition-all rounded-none font-light appearance-none cursor-pointer";
+  "w-full border border-slate-200 px-4 py-3 bg-white text-sm text-slate-900 focus:border-sky-500 focus:outline-none transition-all rounded-lg font-light appearance-none cursor-pointer";
 
-const labelClass = "block text-[10px] uppercase tracking-widest font-bold text-[#1C1716]/60 mb-1.5";
+const labelClass = "block text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1.5";
 
 export default function QuotePage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -77,26 +77,26 @@ export default function QuotePage() {
 
   if (submitted) {
     return (
-      <div className="bg-[#FAF9F5] text-[#1C1716] font-sans min-h-screen flex items-center justify-center pt-20">
-        <div className="max-w-xl mx-auto px-6 text-center space-y-8 py-16 border border-[#1C1716]/10 bg-transparent relative rounded-none">
-          <div className="w-12 h-12 bg-[#1C1716] text-[#E5D3B3] flex items-center justify-center mx-auto">
+      <div className="bg-white text-slate-900 font-sans min-h-screen flex items-center justify-center pt-20">
+        <div className="max-w-xl mx-auto px-6 text-center space-y-8 py-16 border border-slate-100 bg-slate-50 relative rounded-2xl shadow-sm">
+          <div className="w-12 h-12 bg-slate-900 text-sky-300 flex items-center justify-center mx-auto rounded-lg">
             <CheckCircle2 className="w-6 h-6" />
           </div>
           <div className="space-y-3">
-            <h1 className="font-serif text-3xl font-normal text-[#1C1716] tracking-wide">
+            <h1 className="font-sans text-3xl font-extrabold text-slate-900 tracking-tight">
               Quote Request Logged
             </h1>
-            <p className="text-sm text-[#1C1716]/75 font-light">
+            <p className="text-sm text-slate-655 font-light">
               Thank you, <strong>{form.name || "there"}</strong>. Your bakery routing constraints have been queued.
             </p>
-            <p className="text-xs text-[#1C1716]/60 leading-relaxed font-light max-w-sm mx-auto">
+            <p className="text-xs text-slate-500 leading-relaxed font-light max-w-sm mx-auto">
               Our dispatch planners will calculate route parameters and email a detailed custom proposal to you within 2 business hours.
             </p>
           </div>
           <div className="pt-4">
             <Link
               href="/"
-              className="inline-flex items-center justify-center px-6 py-3.5 bg-[#1C1716] text-[#FAF9F5] border border-[#1C1716] hover:bg-transparent hover:text-[#1C1716] transition-all duration-500 text-[10px] tracking-widest uppercase font-semibold rounded-none cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3.5 bg-slate-900 text-white border border-slate-900 hover:bg-transparent hover:text-slate-900 transition-all duration-500 text-[10px] tracking-widest uppercase font-bold rounded-lg cursor-pointer"
             >
               Back to Home
             </Link>
@@ -107,33 +107,33 @@ export default function QuotePage() {
   }
 
   return (
-    <div className="bg-[#FAF9F5] text-[#1C1716] font-sans">
+    <div className="bg-white text-slate-900 font-sans">
       
       {/* 1. Hero Section */}
-      <section className="relative w-full h-[45vh] flex items-center justify-center overflow-hidden bg-[#1C1716] pt-16">
+      <section className="relative w-full h-[45vh] flex items-center justify-center overflow-hidden bg-slate-900 pt-16">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop"
             alt="Quote banner"
-            className="w-full h-full object-cover opacity-25 transform scale-105"
+            className="w-full h-full object-cover opacity-20 transform scale-105"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-slate-950/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#E5D3B3]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-sky-400">
             Rates Inquiry
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-normal text-[#FAF9F5] tracking-wide">
+          <h1 className="font-sans text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Request a Quote
           </h1>
-          <p className="text-sm text-[#FAF9F5]/70 max-w-xl mx-auto font-light leading-relaxed">
+          <p className="text-sm text-slate-200 max-w-xl mx-auto font-light leading-relaxed">
             Provide your bakery staging locations, temperature limits, and dispatch timetables below.
           </p>
         </div>
       </section>
 
       {/* 2. Step Form */}
-      <section className="py-24 bg-[#FAF9F5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           
           {/* Step indicators */}
@@ -144,17 +144,17 @@ export default function QuotePage() {
                 <React.Fragment key={step.id}>
                   <div className="flex flex-col items-center gap-2">
                     <div
-                      className={`w-10 h-10 flex items-center justify-center transition-all duration-300 ${
+                      className={`w-10 h-10 flex items-center justify-center transition-all duration-300 rounded-lg ${
                         currentStep >= step.id
-                          ? "bg-[#1C1716] text-[#E5D3B3]"
-                          : "bg-[#1C1716]/10 text-[#1C1716]/40"
+                          ? "bg-slate-900 text-sky-300"
+                          : "bg-slate-100 text-slate-400"
                       }`}
                     >
                       <StepIcon className="w-4 h-4" />
                     </div>
                     <span
                       className={`text-[9px] font-bold uppercase tracking-wider hidden sm:block ${
-                        currentStep >= step.id ? "text-[#1C1716]" : "text-[#1C1716]/40"
+                        currentStep >= step.id ? "text-slate-900" : "text-slate-400"
                       }`}
                     >
                       {step.label}
@@ -164,7 +164,7 @@ export default function QuotePage() {
                     <div className="flex-1 mx-4">
                       <div
                         className={`h-[1px] transition-all duration-500 ${
-                          currentStep > step.id ? "bg-[#1C1716]" : "bg-[#1C1716]/10"
+                          currentStep > step.id ? "bg-slate-900" : "bg-slate-100"
                         }`}
                       />
                     </div>
@@ -175,16 +175,16 @@ export default function QuotePage() {
           </div>
 
           {/* Form Content Block */}
-          <form onSubmit={handleSubmit} className="border border-[#1C1716]/10 p-8 sm:p-10 bg-transparent rounded-none text-left">
+          <form onSubmit={handleSubmit} className="border border-slate-100 p-8 sm:p-10 bg-slate-50 rounded-2xl shadow-sm text-left">
             
             {/* Step 1: Contact Details */}
             {currentStep === 1 && (
               <div className="space-y-6">
-                <div className="space-y-2 border-b border-[#1C1716]/10 pb-4">
-                  <h2 className="font-serif text-2xl font-normal text-[#1C1716]">
+                <div className="space-y-2 border-b border-slate-200/60 pb-4">
+                  <h2 className="font-sans text-2xl font-extrabold text-slate-900">
                     Contact Information
                   </h2>
-                  <p className="text-[10px] text-[#1C1716]/50 uppercase tracking-widest font-semibold font-sans">
+                  <p className="text-[10px] text-slate-450 uppercase tracking-widest font-bold">
                     Step 1 of 3
                   </p>
                 </div>
@@ -247,11 +247,11 @@ export default function QuotePage() {
             {/* Step 2: Delivery Details */}
             {currentStep === 2 && (
               <div className="space-y-6">
-                <div className="space-y-2 border-b border-[#1C1716]/10 pb-4">
-                  <h2 className="font-serif text-2xl font-normal text-[#1C1716]">
+                <div className="space-y-2 border-b border-slate-200/60 pb-4">
+                  <h2 className="font-sans text-2xl font-extrabold text-slate-900">
                     Routing Specifications
                   </h2>
-                  <p className="text-[10px] text-[#1C1716]/50 uppercase tracking-widest font-semibold font-sans">
+                  <p className="text-[10px] text-slate-450 uppercase tracking-widest font-bold">
                     Step 2 of 3
                   </p>
                 </div>
@@ -300,7 +300,7 @@ export default function QuotePage() {
                           </option>
                         ))}
                       </select>
-                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#1C1716]/60 text-xs">
+                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500 text-xs">
                         ▼
                       </div>
                     </div>
@@ -324,11 +324,11 @@ export default function QuotePage() {
             {/* Step 3: Schedule details */}
             {currentStep === 3 && (
               <div className="space-y-6">
-                <div className="space-y-2 border-b border-[#1C1716]/10 pb-4">
-                  <h2 className="font-serif text-2xl font-normal text-[#1C1716]">
+                <div className="space-y-2 border-b border-slate-200/60 pb-4">
+                  <h2 className="font-sans text-2xl font-extrabold text-slate-900">
                     Delivery Timetables
                   </h2>
-                  <p className="text-[10px] text-[#1C1716]/50 uppercase tracking-widest font-semibold font-sans">
+                  <p className="text-[10px] text-slate-450 uppercase tracking-widest font-bold">
                     Step 3 of 3
                   </p>
                 </div>
@@ -387,7 +387,7 @@ export default function QuotePage() {
                         </option>
                       ))}
                     </select>
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#1C1716]/60 text-xs">
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500 text-xs">
                       ▼
                     </div>
                   </div>
@@ -396,12 +396,12 @@ export default function QuotePage() {
             )}
 
             {/* Form actions footer */}
-            <div className="flex items-center justify-between mt-10 pt-6 border-t border-[#1C1716]/10 select-none">
+            <div className="flex items-center justify-between mt-10 pt-6 border-t border-slate-200/60 select-none">
               {currentStep > 1 ? (
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="inline-flex items-center justify-center gap-1.5 text-[10px] tracking-widest font-bold uppercase text-[#1C1716]/60 hover:text-[#1C1716] transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1.5 text-[10px] tracking-widest font-bold uppercase text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-4.5 h-4.5" />
                   Back
@@ -414,18 +414,18 @@ export default function QuotePage() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="inline-flex items-center justify-center px-6 py-3.5 bg-[#1C1716] text-[#FAF9F5] border border-[#1C1716] hover:bg-transparent hover:text-[#1C1716] transition-all duration-500 text-[10px] tracking-widest uppercase font-semibold rounded-none cursor-pointer"
+                  className="inline-flex items-center justify-center px-6 py-3.5 bg-slate-900 text-white border border-slate-900 hover:bg-transparent hover:text-slate-900 transition-all duration-500 text-[10px] tracking-widest uppercase font-bold rounded-lg cursor-pointer"
                 >
                   Continue
-                  <ArrowRight className="w-3.5 h-3.5 ml-2" />
+                  <ArrowRight className="w-3.5 h-3.5 ml-2 text-sky-400" />
                 </button>
               ) : (
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center px-6 py-3.5 bg-[#1C1716] text-[#FAF9F5] border border-[#1C1716] hover:bg-transparent hover:text-[#1C1716] transition-all duration-500 text-[10px] tracking-widest uppercase font-semibold rounded-none cursor-pointer"
+                  className="inline-flex items-center justify-center px-6 py-3.5 bg-slate-900 text-white border border-slate-900 hover:bg-transparent hover:text-slate-900 transition-all duration-500 text-[10px] tracking-widest uppercase font-bold rounded-lg cursor-pointer"
                 >
                   Submit Request
-                  <Send className="w-3.5 h-3.5 ml-2" />
+                  <Send className="w-3.5 h-3.5 ml-2 text-sky-400" />
                 </button>
               )}
             </div>
